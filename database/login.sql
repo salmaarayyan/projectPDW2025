@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 INSERT INTO users (username, password, role) VALUES
-('admin', '$2y$10$eW5z1Zb1a8Q9F5f5d5f5d5e5f5d5f5d5f5d5f5d5f5d5f5d5f5d', 'admin'), -- Password: admin123
-('user', '$2y$10$eW5z1Zb1a8Q9F5f5d5f5d5e5f5d5f5d5f5d5f5d5f5d5f5d5f', 'user'); -- Password: user123
+('admin', '$2y$10$O5.U0ogijV5UOQsC.Ds2y.G1tDx4tvdO/FdzKYBHQY9i4ct7IRaRK', 'admin'), -- Password: admin123
+('user', '$2y$10$sqJZNEdZwaJt5gJ4DSDbnO0x2Msns9iwU8n4YqMTa3Ueu7m0D9Hty', 'user'); -- Password: user123
