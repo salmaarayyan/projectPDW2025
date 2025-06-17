@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuliner Nusantara Daerah Kalimantan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+    }
+    .hero-section {
+      position: relative;
+      height: 320px;
+      margin-bottom: 2rem;
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .region-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #fff;
+      transition: box-shadow 0.2s;
+      height: 100%;
+    }
+    .region-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .resep-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .resep-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-back {
+      display: block;
+      margin: 40px auto 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color:#000;" href="../../index.php">Kuliner Nusantara</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.php">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../daerah.html">Daerah</a></li>
+          <li class="nav-item"><a class="nav-link" href="../tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section mb-4">
+    <img src="https://api2.kemenparekraf.go.id/storage/app/uploads/public/66b/444/1d5/thumb_12516_1200_630_0_0_crop.jpg" alt="Hero Kalimantan">
+    <div class="hero-text text-center">
+      <h1 class="fw-bold">Kuliner Nusantara Daerah Kalimantan</h1>
+    </div>
+  </div>
+
+  <!-- Deskripsi -->
+  <div class="container mb-5">
+    <p class="text-center fs-5">
+      Kalimantan memiliki ragam kuliner khas yang kaya rempah dan cita rasa unik. Berikut beberapa makanan khas Kalimantan yang terkenal di Indonesia.
+    </p>
+  </div>
+
+  <!-- Card Resep -->
+  <div class="container pb-5">
+    <div class="row g-4">
+      <!-- Soto Banjar -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://indonesiakaya.com/wp-content/uploads/2023/04/sb_Artboard_5.jpg"
+            class="resep-img" alt="Soto Banjar">
+          <div class="p-3">
+            <div class="resep-title">Soto Banjar</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Rebus ayam dengan rempah seperti kayu manis, cengkeh, dan kapulaga hingga empuk, lalu suwir dagingnya. Tumis bumbu halus, masukkan ke dalam kaldu, tambahkan ayam, soun, telur rebus, dan perkedel kentang saat disajikan.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ayam Cincane -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://assets-pergikuliner.com/kjmH9xGj0QMYDpXetZEgxH2_lvU=/fit-in/1366x768/smart/filters:no_upscale()/https://assets-pergikuliner.com/uploads/bootsy/image/27550/Ayam_Cincane__pergikuliner.com_.PNG"
+            class="resep-img" alt="Ayam Cincane">
+          <div class="p-3">
+            <div class="resep-title">Ayam Cincane</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Lumuri ayam dengan bumbu merah khas (cabai, bawang, kemiri, jahe, dll), diamkan agar meresap. Bakar ayam di atas bara sambil dioles sisa bumbu hingga matang dan harum.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ketupat Kandangan -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="region-card h-100">
+          <img src="https://www.masakapahariini.com/wp-content/uploads/2020/03/ketupat-kandangan-1.jpg"
+            class="resep-img" alt="Ketupat Kandangan">
+          <div class="p-3">
+            <div class="resep-title">Ketupat Kandangan</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Rebus ikan gabus dengan bumbu kuning dan santan hingga matang dan meresap. Sajikan bersama ketupat, lalu siram dengan kuah santan kuning yang gurih.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Back -->
+  <div class="container pb-5">
+    <button class="btn btn-outline-secondary btn-back" onclick="window.history.back()">
+      &larr; Kembali
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

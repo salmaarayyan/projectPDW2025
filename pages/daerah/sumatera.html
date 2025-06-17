@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuliner Nusantara Daerah Sumatera</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+    }
+    .hero-section {
+      position: relative;
+      height: 320px;
+      margin-bottom: 2rem;
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .region-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #fff;
+      transition: box-shadow 0.2s;
+      height: 100%;
+    }
+    .region-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .resep-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .resep-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-back {
+      display: block;
+      margin: 40px auto 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color:#000;" href="../../index.php">Kuliner Nusantara</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.php">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../daerah.html">Daerah</a></li>
+          <li class="nav-item"><a class="nav-link" href="../tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section mb-4">
+    <img src="https://pesonatour.com/wp-content/uploads/2023/04/cropped-danau-ateh-view.jpg" alt="Hero Sumatera">
+    <div class="hero-text text-center">
+      <h1 class="fw-bold">Kuliner Nusantara Daerah Sumatera</h1>
+    </div>
+  </div>
+
+  <!-- Deskripsi -->
+  <div class="container mb-5">
+    <p class="text-center fs-5">
+      Sumatera dikenal dengan kekayaan kuliner yang kaya rempah dan cita rasa kuat. Berikut beberapa makanan khas Sumatera yang terkenal di seluruh Indonesia.
+    </p>
+  </div>
+
+  <!-- Card Resep -->
+  <div class="container pb-5">
+    <div class="row g-4">
+      <!-- Rendang -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://cdn0-production-images-kly.akamaized.net/vIx_lxR1UfFl79d67T7pjvy1tXw=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/1253731/original/213c98558a7233f0f923c91df2b986f9beef-curry-recipe-stew-beef-in-coconut-curry.jpg"
+            class="resep-img" alt="Rendang">
+          <div class="p-3">
+            <div class="resep-title">Rendang</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Tumis bumbu halus hingga harum, masukkan daging sapi dan aduk rata. Tambahkan santan dan rempah-rempah, masak dengan api kecil sambil diaduk sesekali hingga santan menyusut dan daging empuk serta bumbu meresap sempurna.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sate Padang -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://i0.wp.com/suarausu.or.id/wp-content/uploads/2023/06/sate-padang-f8858eeddd0a722c42190a0a5c017638-jpg.webp?fit=960%2C640&ssl=1"
+            class="resep-img" alt="Sate Padang">
+          <div class="p-3">
+            <div class="resep-title">Sate Padang</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Rebus daging sapi hingga empuk, potong-potong dan tusuk dengan bambu. Bakar sate hingga matang. Untuk kuah, tumis bumbu kuning, tambahkan kaldu rebusan daging dan tepung beras, aduk hingga mengental. Siram kuah di atas sate saat disajikan.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tempoyak Ikan -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="region-card h-100">
+          <img src="https://silamparitv.disway.id/upload/54d94633d483ad41060ee51e6e941431.jpg"
+            class="resep-img" alt="Tempoyak Ikan">
+          <div class="p-3">
+            <div class="resep-title">Tempoyak Ikan</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Campur daging durian matang dengan garam, fermentasi 3-7 hari hingga asam. Tumis bumbu, masukkan tempoyak dan ikan, tambahkan air, masak hingga ikan matang dan bumbu meresap.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Back -->
+  <div class="container pb-5">
+    <button class="btn btn-outline-secondary btn-back" onclick="window.history.back()">
+      &larr; Kembali
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daerah Kuliner Nusantara</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f8f9fa;
+        }
+        .region-card {
+            border: 1px solid #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            background: #fff;
+            transition: box-shadow 0.2s;
+            height: 100%;
+        }
+
+        .region-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .region-img img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .resep-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .resep-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .resep-desc {
+            font-size: 0.95em;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg" style="background-color:#d4841c;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.php">Kuliner Nusantara</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.php">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="daerah.html">Daerah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
+                    <!-- Tambahkan menu lain jika perlu -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tombol Back -->
+    <div class="container mt-4">
+        <button class="btn btn-outline-secondary mb-3" onclick="window.history.back()">
+            &larr; Kembali
+        </button>
+    </div>
+
+    <div class="container pb-5">
+        <h2 class="mb-4 text-center">Kuliner Nusantara Berdasarkan Daerah</h2>
+        <div class="row g-4">
+            <!-- Sumatera -->
+            <div class="col-lg-4 col-md-6">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://i.pinimg.com/736x/f1/85/3d/f1853d27f6d8eef6dfba21e18534ff98.jpg"
+                            alt="Kuliner Sumatera">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/sumatera.html'">Sumatera</button>
+                        <div class="resep-item">
+                            <img src="https://cdn0-production-images-kly.akamaized.net/vIx_lxR1UfFl79d67T7pjvy1tXw=/800x450/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/1253731/original/213c98558a7233f0f923c91df2b986f9beef-curry-recipe-stew-beef-in-coconut-curry.jpg"
+                                class="resep-img" alt="Rendang">
+                            <div>
+                                <strong>Rendang</strong>
+                                <div class="resep-desc">Tumis bumbu halus, masukkan daging, santan, dan rempah. Masak
+                                    hingga kering dan daging empuk.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://i0.wp.com/suarausu.or.id/wp-content/uploads/2023/06/sate-padang-f8858eeddd0a722c42190a0a5c017638-jpg.webp?fit=960%2C640&ssl=1"
+                                class="resep-img" alt="Sate Padang">
+                            <div>
+                                <strong>Sate Padang</strong>
+                                <div class="resep-desc">Rebus daging, potong, tusuk, bakar. Siram kuah kental bumbu
+                                    kuning khas Padang.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://silamparitv.disway.id/upload/54d94633d483ad41060ee51e6e941431.jpg"
+                                class="resep-img" alt="Tempoyak Ikan">
+                            <div>
+                                <strong>Tempoyak Ikan</strong>
+                                <div class="resep-desc">Daging durian matang dipisah, dicampur garam, dan difermentasi 3-7 hari hingga rasanya asam.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Jawa -->
+            <div class="col-lg-4 col-md-6">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://i.pinimg.com/736x/65/99/d8/6599d8b5261f20d3f1863e94f6be9522.jpg"
+                            alt="Kuliner Jawa">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/jawa.html'">Jawa</button>
+                        <div class="resep-item">
+                            <img src="https://nawabineka.com/wp-content/uploads/2024/08/gudeg_@aetandjournal.jpg"
+                                class="resep-img" alt="Gudeg">
+                            <div>
+                                <strong>Gudeg</strong>
+                                <div class="resep-desc">Rebus nangka muda dengan santan, gula merah, dan bumbu hingga
+                                    empuk dan meresap.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://asset.kompas.com/crops/RAkLCVPTiwC_qhG4W4wb1dN-uX4=/0x12:983x667/1200x800/data/photo/2023/11/17/6556dc6484a92.jpg"
+                                class="resep-img" alt="Rawon">
+                            <div>
+                                <strong>Rawon</strong>
+                                <div class="resep-desc">Tumis bumbu kluwek, masukkan daging, air, masak hingga daging
+                                    empuk dan kuah hitam.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://www.masakapahariini.com/wp-content/uploads/2021/10/Nasi-Pecel-Madiun.jpg"
+                                class="resep-img" alt="Pecel">
+                            <div>
+                                <strong>Pecel</strong>
+                                <div class="resep-desc">Siram sayuran rebus dengan sambal kacang khas Jawa.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Kalimantan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://i.pinimg.com/736x/58/e3/58/58e358d94c863915b0221f50640ff761.jpg"
+                            alt="Kuliner Kalimantan">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/kalimantan.html'">Kalimantan</button>
+                        <div class="resep-item">
+                            <img src="https://indonesiakaya.com/wp-content/uploads/2023/04/sb_Artboard_5.jpg"
+                                class="resep-img" alt="Soto Banjar">
+                            <div>
+                                <strong>Soto Banjar</strong>
+                                <div class="resep-desc">Rebus ayam dengan rempah, sajikan dengan soun, telur, dan
+                                    perkedel kentang.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://assets-pergikuliner.com/kjmH9xGj0QMYDpXetZEgxH2_lvU=/fit-in/1366x768/smart/filters:no_upscale()/https://assets-pergikuliner.com/uploads/bootsy/image/27550/Ayam_Cincane__pergikuliner.com_.PNG"
+                                class="resep-img" alt="Ayam Cincane">
+                            <div>
+                                <strong>Ayam Cincane</strong>
+                                <div class="resep-desc">Lumuri ayam dengan bumbu merah, bakar hingga matang dan harum.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://www.masakapahariini.com/wp-content/uploads/2020/03/ketupat-kandangan-1.jpg"
+                                class="resep-img" alt="Ketupat Kandangan">
+                            <div>
+                                <strong>Ketupat Kandangan</strong>
+                                <div class="resep-desc">Ketupat disajikan dengan ikan gabus dan kuah santan kuning.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sulawesi -->
+            <div class="col-lg-4 col-md-6">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://i.pinimg.com/736x/70/6c/ae/706cae701324ca56a2c4c5929f990574.jpg"
+                            alt="Kuliner Sulawesi">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/sulawesi.html'">Sulawesi</button>
+                        <div class="resep-item">
+                            <img src="https://indonesiakaya.com/wp-content/uploads/2023/04/cm_Artboard_4.jpg"
+                                class="resep-img" alt="Coto Makassar">
+                            <div>
+                                <strong>Coto Makassar</strong>
+                                <div class="resep-desc">Rebus daging dan jeroan, masak dengan bumbu kacang dan rempah
+                                    khas.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://awsimages.detik.net.id/community/media/visual/2024/10/01/pallubasa-enak-di-jakarta-2_43.jpeg?w=1200"
+                                class="resep-img" alt="Pallubasa">
+                            <div>
+                                <strong>Pallubasa</strong>
+                                <div class="resep-desc">Daging sapi dimasak dengan kelapa sangrai dan rempah, sajikan
+                                    dengan telur mentah.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://i0.wp.com/resepkoki.id/wp-content/uploads/2017/05/Resep-Sup-Konro.jpg?fit=1893%2C1920&ssl=1"
+                                class="resep-img" alt="Sup Konro">
+                            <div>
+                                <strong>Sup Konro</strong>
+                                <div class="resep-desc">Iga sapi direbus dengan bumbu hitam khas, sajikan dengan kuah
+                                    atau dibakar.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bali -->
+            <div class="col-lg-4 col-md-6">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://pelita-air.com/admin/assets/uploads/images/promotion/2023-07/5-kuliner-halal-yang-wajib-dicoba-di-bali-9267.webp" alt="Kuliner Bali">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/bali-ntt-ntb.html'">Bali & Nusa Tenggara</button>
+                        <div class="resep-item">
+                            <img src="https://asset.kompas.com/crops/VoJMFCaXEK_Pgm9W61uIPXmv4G8=/0x0:1000x667/1200x800/data/photo/2022/03/16/62317090c4323.jpg"
+                                class="resep-img" alt="Ayam Betutu">
+                            <div>
+                                <strong>Ayam Betutu</strong>
+                                <div class="resep-desc">Ayam utuh dibumbui base genep, dibungkus daun, kukus lalu bakar.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://awsimages.detik.net.id/community/media/visual/2020/09/17/sate-lilit-ayam-khas-bali-1.jpeg?w=600&q=90"
+                                class="resep-img" alt="Sate Lilit">
+                            <div>
+                                <strong>Sate Lilit</strong>
+                                <div class="resep-desc">Daging cincang dibumbui, lilitkan ke batang sereh, lalu bakar.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://asset.kompas.com/crops/aKHzGiCyRFfjzCWSTPWuyUd9KCs=/0x331:667x775/1200x800/data/photo/2022/06/08/62a00174befad.jpg"
+                                class="resep-img" alt="Lawar">
+                            <div>
+                                <strong>Lawar</strong>
+                                <div class="resep-desc">Campur sayur, daging cincang, kelapa parut, dan bumbu khas Bali.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Maluku -->
+            <div class="col-lg-4 col-md-6">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://ik.imagekit.io/tvlk/blog/2021/01/Papeda-shutterstock_1719918754-1024x682.jpeg?tr=q-70,c-at_max,w-500,h-300,dpr-2" alt="Kuliner Maluku">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/maluku.html'">Maluku</button>
+                        <div class="resep-item">
+                            <img src="https://www.primarasa.co.id/images/images/papeda%281%29.jpg"
+                                class="resep-img" alt="Papeda Maluku">
+                            <div>
+                                <strong>Papeda</strong>
+                                <div class="resep-desc">Sagu dimasak dengan air panas hingga mengental, sajikan dengan
+                                    ikan kuah kuning.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://cdn0-production-images-kly.akamaized.net/tzdVlnZUTPli6Ct4do9WrTWMlnI=/1x24:1000x587/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3952885/original/005140600_1646447171-shutterstock_1603506478.jpg"
+                                class="resep-img" alt="Ikan Bakar Rica">
+                            <div>
+                                <strong>Ikan Bakar Rica</strong>
+                                <div class="resep-desc">Ikan dibumbui rica-rica, bakar hingga matang dan harum.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://cdn.grid.id/crop/0x0:0x0/700x465/photo/sasefoto/original/32106_kohu-kohu.jpg"
+                                class="resep-img" alt="Kohu-Kohu">
+                            <div>
+                                <strong>Kohu-Kohu</strong>
+                                <div class="resep-desc">Campur sayur, ikan suwir, kelapa parut, dan perasan jeruk nipis.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Papua -->
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="region-card h-100">
+                    <div class="region-img">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJ6xx0RsKXuAqBCLBZqSQVnZFUt9GrsTwfqOCzkl8LqNEcuJwH0-KcLjabDT31e86XGtfiRwLvMy-A7PBA-UpUtEjizO_Hpt-PiGZduocJUU0X2iPCZ16_mlU7n6hMjca5_hyphenhyphenCZ8xWbhaD/s1600/IMG_papoeabynature3.jpg" alt="Kuliner Papua">
+                    </div>
+                    <div class="p-3">
+                        <button class="btn btn-primary w-100 mb-3" onclick="window.location.href='daerah/papua.html'">Papua</button>
+                        <div class="resep-item">
+                            <img src="https://indonesiakaya.com/wp-content/uploads/2023/04/pakk_Artboard_1.jpg"
+                                class="resep-img" alt="Papeda Papua">
+                            <div>
+                                <strong>Papeda</strong>
+                                <div class="resep-desc">Sagu dimasak hingga kental, sajikan dengan ikan kuah kuning khas
+                                    Papua.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://media.tampang.com/tm_images/article/202407/makanan-4jpgpdn1wbal7zih17px.jpg"
+                                class="resep-img" alt="Ikan Bungkus">
+                            <div>
+                                <strong>Ikan Bungkus</strong>
+                                <div class="resep-desc">Ikan dibumbui, dibungkus daun, lalu dikukus hingga matang.</div>
+                            </div>
+                        </div>
+                        <div class="resep-item">
+                            <img src="https://kabarpapua.co/wp-content/uploads/2024/03/9158e8cbd1669108839a9d93e6c76e3a.jpg"
+                                class="resep-img" alt="Udang Selingkuh">
+                            <div>
+                                <strong>Udang Selingkuh</strong>
+                                <div class="resep-desc">Udang air tawar dimasak dengan bumbu sederhana, biasanya dibakar
+                                    atau direbus.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

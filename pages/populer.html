@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resep Populer | Kuliner Nusantara</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f7f7f7;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .hero-section {
+      position: relative;
+      height: 320px;
+      margin-bottom: 2rem;
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      width: 100%;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .recipe-card {
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      overflow: hidden;
+      background: #fff;
+      margin-bottom: 30px;
+      transition: box-shadow 0.2s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .recipe-card:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    }
+    .recipe-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .recipe-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .recipe-meta {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+    .recipe-rating {
+      color: #c98a13;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .recipe-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #c98a13;
+      color: #fff;
+      padding: 0.35em 1em;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .nutrisi-list {
+      font-size: 0.97rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+      padding-left: 1.2em;
+    }
+    .btn-back {
+      padding: 0.75rem 2.5rem;
+      font-size: 1.15rem;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+    @media (max-width: 576px) {
+      .recipe-img { height: 140px; }
+      .hero-section { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar/Header -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color:#000;" href="../index.php">Kuliner Nusantara</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.php">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="daerah.html">Daerah</a></li>
+          <li class="nav-item"><a class="nav-link" href="kategori.html">Kategori</a></li>
+          <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section mb-4">
+    <img src="https://cdn0-production-images-kly.akamaized.net/2fEZu9B0fcFNIvqQ8UAhjuLdc2s=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1367799/original/048059200_1475843806-Masakan_Indonesia.jpg" alt="Hero Resep Populer">
+    <div class="hero-text">
+      <h1 class="fw-bold">Resep Populer</h1>
+    </div>
+  </div>
+
+  <div class="container pb-5">
+    <div class="row">
+      <!-- Rendang Padang -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="recipe-card h-100">
+          <div class="position-relative">
+            <img src="https://i.pinimg.com/736x/09/f9/b3/09f9b321b01b2f617b6a7eadb1e59c73.jpg" class="recipe-img" alt="Rendang">
+            <div class="recipe-badge">Sumatera</div>
+          </div>
+          <div class="p-3 d-flex flex-column flex-grow-1">
+            <div class="recipe-title">Rendang Padang</div>
+            <div class="recipe-meta mb-2">
+              <span><i class="bi bi-clock"></i> 240 menit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-bar-chart"></i> Sulit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-star-fill recipe-rating"></i> 4.9</span>
+            </div>
+            <div class="mb-2"><strong>Bahan:</strong>
+              <ul class="mb-1">
+                <li>1 kg daging sapi</li>
+                <li>1 liter santan kental</li>
+                <li>8 siung bawang merah, 5 siung bawang putih</li>
+                <li>5 buah cabai merah, 2 batang serai, 4 lembar daun jeruk</li>
+                <li>2 cm lengkuas, 2 lembar daun kunyit, garam, gula</li>
+              </ul>
+            </div>
+            <div class="mb-2"><strong>Cara Membuat:</strong>
+              <ol class="mb-1">
+                <li>Haluskan bumbu, tumis hingga harum.</li>
+                <li>Masukkan daging, aduk rata, tuang santan dan rempah.</li>
+                <li>Masak dengan api kecil, aduk sesekali hingga santan menyusut dan daging empuk serta bumbu menghitam.</li>
+              </ol>
+            </div>
+            <div class="mb-2"><strong>Nutrisi (per porsi):</strong>
+              <ul class="nutrisi-list">
+                <li>Kalori: 350 kcal</li>
+                <li>Protein: 18g</li>
+                <li>Lemak: 28g</li>
+                <li>Karbohidrat: 4g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Soto Betawi -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="recipe-card h-100">
+          <div class="position-relative">
+            <img src="https://i.pinimg.com/736x/f3/80/ce/f380ce84bab60653bba44fc2d44cf53f.jpg" class="recipe-img" alt="Soto Betawi">
+            <div class="recipe-badge">Jawa</div>
+          </div>
+          <div class="p-3 d-flex flex-column flex-grow-1">
+            <div class="recipe-title">Soto Betawi</div>
+            <div class="recipe-meta mb-2">
+              <span><i class="bi bi-clock"></i> 120 menit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-bar-chart"></i> Sedang</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-star-fill recipe-rating"></i> 4.7</span>
+            </div>
+            <div class="mb-2"><strong>Bahan:</strong>
+              <ul class="mb-1">
+                <li>500g daging sapi</li>
+                <li>200g jeroan sapi (opsional)</li>
+                <li>500 ml santan</li>
+                <li>5 siung bawang merah, 3 siung bawang putih</li>
+                <li>2 batang serai, 2 lembar daun salam, 2 cm jahe</li>
+                <li>Garam, merica, minyak goreng</li>
+              </ul>
+            </div>
+            <div class="mb-2"><strong>Cara Membuat:</strong>
+              <ol class="mb-1">
+                <li>Rebus daging dan jeroan hingga empuk, potong-potong.</li>
+                <li>Tumis bumbu halus dan rempah hingga harum, masukkan ke kuah rebusan.</li>
+                <li>Tambahkan santan, masak hingga mendidih, sajikan dengan pelengkap.</li>
+              </ol>
+            </div>
+            <div class="mb-2"><strong>Nutrisi (per porsi):</strong>
+              <ul class="nutrisi-list">
+                <li>Kalori: 290 kcal</li>
+                <li>Protein: 15g</li>
+                <li>Lemak: 22g</li>
+                <li>Karbohidrat: 7g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tempe Mendoan -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="recipe-card h-100">
+          <div class="position-relative">
+            <img src="https://i.pinimg.com/736x/90/23/46/902346b628613ba4d39882cc75500f4a.jpg" class="recipe-img" alt="Tempe Mendoan">
+            <div class="recipe-badge">Jawa</div>
+          </div>
+          <div class="p-3 d-flex flex-column flex-grow-1">
+            <div class="recipe-title">Tempe Mendoan</div>
+            <div class="recipe-meta mb-2">
+              <span><i class="bi bi-clock"></i> 30 menit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-bar-chart"></i> Mudah</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-star-fill recipe-rating"></i> 4.6</span>
+            </div>
+            <div class="mb-2"><strong>Bahan:</strong>
+              <ul class="mb-1">
+                <li>1 papan tempe, iris tipis</li>
+                <li>100g tepung terigu</li>
+                <li>2 siung bawang putih, 1 batang daun bawang</li>
+                <li>1/2 sdt ketumbar bubuk, garam, air secukupnya</li>
+                <li>Minyak untuk menggoreng</li>
+              </ul>
+            </div>
+            <div class="mb-2"><strong>Cara Membuat:</strong>
+              <ol class="mb-1">
+                <li>Buat adonan tepung, bumbu, dan air hingga kental.</li>
+                <li>Celupkan tempe ke adonan, goreng dalam minyak panas hingga setengah matang.</li>
+                <li>Angkat dan sajikan hangat dengan sambal kecap.</li>
+              </ol>
+            </div>
+            <div class="mb-2"><strong>Nutrisi (per porsi):</strong>
+              <ul class="nutrisi-list">
+                <li>Kalori: 180 kcal</li>
+                <li>Protein: 7g</li>
+                <li>Lemak: 10g</li>
+                <li>Karbohidrat: 15g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Klappertaart -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="recipe-card h-100">
+          <div class="position-relative">
+            <img src="https://i.pinimg.com/736x/de/ef/f1/deeff16a19fdbec65b5d58bf8b494678.jpg" class="recipe-img" alt="Klappertaart">
+            <div class="recipe-badge">Sulawesi</div>
+          </div>
+          <div class="p-3 d-flex flex-column flex-grow-1">
+            <div class="recipe-title">Klappertaart</div>
+            <div class="recipe-meta mb-2">
+              <span><i class="bi bi-clock"></i> 60 menit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-bar-chart"></i> Sedang</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-star-fill recipe-rating"></i> 4.8</span>
+            </div>
+            <div class="mb-2"><strong>Bahan:</strong>
+              <ul class="mb-1">
+                <li>200g kelapa muda serut</li>
+                <li>100g tepung terigu</li>
+                <li>100g gula pasir</li>
+                <li>3 butir telur</li>
+                <li>300 ml susu cair</li>
+                <li>50g mentega, 30g kismis</li>
+              </ul>
+            </div>
+            <div class="mb-2"><strong>Cara Membuat:</strong>
+              <ol class="mb-1">
+                <li>Kocok telur dan gula, masukkan tepung, susu, dan mentega cair.</li>
+                <li>Tambahkan kelapa muda dan kismis, aduk rata.</li>
+                <li>Tuang ke loyang, panggang 40 menit hingga matang dan permukaan kecoklatan.</li>
+              </ol>
+            </div>
+            <div class="mb-2"><strong>Nutrisi (per porsi):</strong>
+              <ul class="nutrisi-list">
+                <li>Kalori: 220 kcal</li>
+                <li>Protein: 5g</li>
+                <li>Lemak: 12g</li>
+                <li>Karbohidrat: 24g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Wedang Ronde -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="recipe-card h-100">
+          <div class="position-relative">
+            <img src="https://i.pinimg.com/736x/58/ad/aa/58adaaaea8e65c25cc25ce2a2042ef0d.jpg" class="recipe-img" alt="Wedang Ronde">
+            <div class="recipe-badge">Jawa</div>
+          </div>
+          <div class="p-3 d-flex flex-column flex-grow-1">
+            <div class="recipe-title">Wedang Ronde</div>
+            <div class="recipe-meta mb-2">
+              <span><i class="bi bi-clock"></i> 45 menit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-bar-chart"></i> Sedang</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-star-fill recipe-rating"></i> 4.5</span>
+            </div>
+            <div class="mb-2"><strong>Bahan:</strong>
+              <ul class="mb-1">
+                <li>200g tepung ketan</li>
+                <li>100g kacang tanah sangrai, haluskan</li>
+                <li>100g gula merah</li>
+                <li>2 ruas jahe, memarkan</li>
+                <li>1 liter air</li>
+                <li>Garam, pewarna makanan (opsional)</li>
+              </ul>
+            </div>
+            <div class="mb-2"><strong>Cara Membuat:</strong>
+              <ol class="mb-1">
+                <li>Buat adonan tepung ketan, isi dengan kacang, bentuk bulat.</li>
+                <li>Rebus bola ketan hingga mengapung.</li>
+                <li>Masak air, jahe, gula merah, dan garam hingga mendidih, sajikan bola ketan dengan kuah jahe.</li>
+              </ol>
+            </div>
+            <div class="mb-2"><strong>Nutrisi (per porsi):</strong>
+              <ul class="nutrisi-list">
+                <li>Kalori: 160 kcal</li>
+                <li>Protein: 3g</li>
+                <li>Lemak: 2g</li>
+                <li>Karbohidrat: 34g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ayam Betutu -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="recipe-card h-100">
+          <div class="position-relative">
+            <img src="https://i.pinimg.com/736x/7b/d4/7e/7bd47ea0ce92314b5e61681e6c62baa5.jpg" class="recipe-img" alt="Ayam Betutu">
+            <div class="recipe-badge">Bali</div>
+          </div>
+          <div class="p-3 d-flex flex-column flex-grow-1">
+            <div class="recipe-title">Ayam Betutu</div>
+            <div class="recipe-meta mb-2">
+              <span><i class="bi bi-clock"></i> 180 menit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-bar-chart"></i> Sulit</span>
+              <span class="mx-2">|</span>
+              <span><i class="bi bi-star-fill recipe-rating"></i> 4.7</span>
+            </div>
+            <div class="mb-2"><strong>Bahan:</strong>
+              <ul class="mb-1">
+                <li>1 ekor ayam utuh</li>
+                <li>10 siung bawang merah, 6 siung bawang putih</li>
+                <li>5 cabai merah, 2 batang serai, 2 cm jahe, 2 cm kunyit</li>
+                <li>2 lembar daun salam, 1 sdt terasi, garam, gula</li>
+                <li>Daun pisang untuk membungkus</li>
+              </ul>
+            </div>
+            <div class="mb-2"><strong>Cara Membuat:</strong>
+              <ol class="mb-1">
+                <li>Haluskan semua bumbu, tumis hingga harum.</li>
+                <li>Balurkan bumbu ke ayam, bungkus dengan daun pisang.</li>
+                <li>Kukus ayam 1,5 jam lalu panggang hingga matang dan bumbu meresap.</li>
+              </ol>
+            </div>
+            <div class="mb-2"><strong>Nutrisi (per porsi):</strong>
+              <ul class="nutrisi-list">
+                <li>Kalori: 320 kcal</li>
+                <li>Protein: 22g</li>
+                <li>Lemak: 18g</li>
+                <li>Karbohidrat: 8g</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tombol Back -->
+    <div class="text-center pb-5">
+      <button class="btn btn-outline-secondary btn-back mt-4" onclick="window.history.back()">
+        &larr; Kembali
+      </button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

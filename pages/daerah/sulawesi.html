@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuliner Nusantara Daerah Sulawesi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+    }
+    .hero-section {
+      position: relative;
+      height: 320px;
+      margin-bottom: 2rem;
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .region-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #fff;
+      transition: box-shadow 0.2s;
+      height: 100%;
+    }
+    .region-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .resep-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .resep-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-back {
+      display: block;
+      margin: 40px auto 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color:#000;" href="../../index.php">Kuliner Nusantara</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.php">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../daerah.html">Daerah</a></li>
+          <li class="nav-item"><a class="nav-link" href="../tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section mb-4">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kete%27_Kesu%27_Toraja.jpg/1200px-Kete%27_Kesu%27_Toraja.jpg" alt="Hero Sulawesi">
+    <div class="hero-text text-center">
+      <h1 class="fw-bold">Kuliner Nusantara Daerah Sulawesi</h1>
+    </div>
+  </div>
+
+  <!-- Deskripsi -->
+  <div class="container mb-5">
+    <p class="text-center fs-5">
+      Sulawesi terkenal dengan kuliner berbahan dasar daging dan rempah yang kuat. Berikut beberapa makanan khas Sulawesi yang wajib dicoba.
+    </p>
+  </div>
+
+  <!-- Card Resep -->
+  <div class="container pb-5">
+    <div class="row g-4">
+      <!-- Coto Makassar -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://indonesiakaya.com/wp-content/uploads/2023/04/cm_Artboard_4.jpg"
+            class="resep-img" alt="Coto Makassar">
+          <div class="p-3">
+            <div class="resep-title">Coto Makassar</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Rebus daging dan jeroan sapi hingga empuk, potong-potong. Tumis bumbu kacang dan rempah, masukkan ke dalam rebusan daging, masak hingga bumbu meresap dan sajikan hangat.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pallubasa -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://awsimages.detik.net.id/community/media/visual/2024/10/01/pallubasa-enak-di-jakarta-2_43.jpeg?w=1200"
+            class="resep-img" alt="Pallubasa">
+          <div class="p-3">
+            <div class="resep-title">Pallubasa</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Daging sapi dimasak bersama kelapa sangrai dan rempah-rempah hingga empuk. Sajikan dengan tambahan telur mentah di atasnya untuk menambah cita rasa.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sup Konro -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="region-card h-100">
+          <img src="https://i0.wp.com/resepkoki.id/wp-content/uploads/2017/05/Resep-Sup-Konro.jpg?fit=1893%2C1920&ssl=1"
+            class="resep-img" alt="Sup Konro">
+          <div class="p-3">
+            <div class="resep-title">Sup Konro</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Iga sapi direbus dengan bumbu hitam khas Sulawesi hingga empuk. Bisa disajikan berkuah atau dibakar sesuai selera.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Back -->
+  <div class="container pb-5">
+    <button class="btn btn-outline-secondary btn-back" onclick="window.history.back()">
+      &larr; Kembali
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>

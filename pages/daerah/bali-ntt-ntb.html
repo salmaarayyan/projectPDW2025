@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuliner Nusantara Daerah Bali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+    }
+    .hero-section {
+      position: relative;
+      height: 320px;
+      margin-bottom: 2rem;
+    }
+    .hero-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      width: 100%;
+      padding: 0 1rem;
+    }
+    .region-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #fff;
+      transition: box-shadow 0.2s;
+      height: 100%;
+    }
+    .region-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .resep-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .resep-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-back {
+      display: block;
+      margin: 40px auto 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color:#000;" href="../../index.php">Kuliner Nusantara</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../index.php">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../daerah.html">Daerah</a></li>
+          <li class="nav-item"><a class="nav-link" href="../tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-section mb-4">
+    <img src="https://www.pelago.com/img/destinations/bali/0619-0941_bali-xlarge.webp" alt="Hero Bali">
+    <div class="hero-text text-center">
+      <h1 class="fw-bold">Kuliner Nusantara Daerah Bali</h1>
+    </div>
+  </div>
+
+  <!-- Deskripsi -->
+  <div class="container mb-5">
+    <p class="text-center fs-5">
+      Bali terkenal dengan kuliner berbumbu khas dan cita rasa yang kuat. Berikut beberapa makanan khas Bali yang populer.
+    </p>
+  </div>
+
+  <!-- Card Resep -->
+  <div class="container pb-5">
+    <div class="row g-4">
+      <!-- Ayam Betutu -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://asset.kompas.com/crops/VoJMFCaXEK_Pgm9W61uIPXmv4G8=/0x0:1000x667/1200x800/data/photo/2022/03/16/62317090c4323.jpg"
+            class="resep-img" alt="Ayam Betutu">
+          <div class="p-3">
+            <div class="resep-title">Ayam Betutu</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Ayam utuh dibumbui base genep, dibungkus daun pisang, dikukus lalu dibakar hingga matang dan bumbu meresap.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sate Lilit -->
+      <div class="col-lg-4 col-md-6">
+        <div class="region-card h-100">
+          <img src="https://awsimages.detik.net.id/community/media/visual/2020/09/17/sate-lilit-ayam-khas-bali-1.jpeg?w=600&q=90"
+            class="resep-img" alt="Sate Lilit">
+          <div class="p-3">
+            <div class="resep-title">Sate Lilit</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Daging cincang dibumbui rempah, dililitkan ke batang sereh, lalu dibakar hingga matang.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Lawar -->
+      <div class="col-lg-4 col-md-6 mx-auto">
+        <div class="region-card h-100">
+          <img src="https://asset.kompas.com/crops/aKHzGiCyRFfjzCWSTPWuyUd9KCs=/0x331:667x775/1200x800/data/photo/2022/06/08/62a00174befad.jpg"
+            class="resep-img" alt="Lawar">
+          <div class="p-3">
+            <div class="resep-title">Lawar</div>
+            <div class="resep-desc">
+              <strong>Cara Membuat:</strong><br>
+              Campurkan sayuran, daging cincang, kelapa parut, dan bumbu khas Bali hingga rata.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol Back -->
+  <div class="container pb-5">
+    <button class="btn btn-outline-secondary btn-back" onclick="window.history.back()">
+      &larr; Kembali
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
