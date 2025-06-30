@@ -544,8 +544,8 @@ if (!isset($_SESSION['user_id'])) {
                         </select>
                     </div>
                     <div class="user-menu ms-auto">
-                        <span>Welcome, <?php echo $_SESSION['username']; ?>!</span>
-                        <a href="logout.php" class="user-menu-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        <span>Welcome, <?php echo $_SESSION['username']; ?>!</span> <!-- Menampilkan nama user yang login -->
+                        <a href="logout.php" class="user-menu-link"><i class="fas fa-sign-out-alt"></i> Logout</a> <!-- Link untuk logout -->
                     </div>
                 </div>
             </div>
@@ -598,7 +598,7 @@ if (!isset($_SESSION['user_id'])) {
                             <a class="nav-link" href="pages/populer.html">Resep Populer</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/tentang.html">Tentang Kami</a>
+                            <a class="nav-link" href="pages/tentang.php">Tentang Kami</a>
                         </li>
                         </li>
                     </ul>
@@ -886,54 +886,36 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JavaScript -->
+    <!-- Custom JavaScript untuk membuat halaman lebih interaktif dan dinamis-->
     <script >
         // Recipe Filter
         document.addEventListener('DOMContentLoaded', function() {
             const filterBtns = document.querySelectorAll('.filter-btn');
             const recipeCards = document.querySelectorAll('[data-category]');
             
-            filterBtns.forEach(btn => {
+            filterBtns.forEach(btn => { // Tambahkan event klik ke setiap tombol filter
                 btn.addEventListener('click', function() {
-                    // Remove active class from all buttons
+                    // Hapus class aktif dari semua tombol
                     filterBtns.forEach(b => b.classList.remove('active'));
-                    // Add active class to clicked button
+                    // Tambahkan class aktif ke tombol yang diklik
                     this.classList.add('active');
                     
-                    const filter = this.getAttribute('data-filter');
+                    const filter = this.getAttribute('data-filter'); // Ambil nilai filter dari atribut data-filter tombol yang diklik
                     
-                    recipeCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'block';
+                    recipeCards.forEach(card => { // Tampilkan atau sembunyikan kartu resep berdasarkan filter
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) { // Tampilkan kartu jika filter adalah 'all' atau kategori kartu sesuai dengan filter
+                            card.style.display = 'block'; // Tampilkan kartu
                         } else {
-                            card.style.display = 'none';
+                            card.style.display = 'none'; // Sembunyikan kartu
                         }
                     });
                 });
             });
             
-            // Search functionality
-            const searchForm = document.getElementById('search-form');
-            const searchInput = document.getElementById('search-input');
-            
-            searchForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const searchTerm = searchInput.value.toLowerCase();
-                // Add your search logic here
-                console.log('Searching for:', searchTerm);
-            });
-            
-            // Newsletter form
-            const newsletterForm = document.getElementById('newsletter-form');
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Terima kasih telah berlangganan newsletter kami!');
-            });
-            
             // Back to top button
             const backToTopBtn = document.getElementById('backToTop');
             
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function() { // Tampilkan tombol kembali ke atas jika scroll lebih dari 300px
                 if (window.pageYOffset > 300) {
                     backToTopBtn.style.display = 'block';
                 } else {
@@ -941,7 +923,7 @@ if (!isset($_SESSION['user_id'])) {
                 }
             });
             
-            backToTopBtn.addEventListener('click', function() {
+            backToTopBtn.addEventListener('click', function() { // Tambahkan event klik untuk kembali ke atas
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -949,10 +931,10 @@ if (!isset($_SESSION['user_id'])) {
             });
             
             // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => { // Tambahkan event klik untuk setiap tautan yang mengarah ke ID di halaman
+                anchor.addEventListener('click', function (e) { // Mencegah perilaku default tautan
+                    e.preventDefault(); // Scroll ke elemen target dengan ID yang sesuai
+                    const target = document.querySelector(this.getAttribute('href')); // Ambil elemen target berdasarkan ID
                     if (target) {
                         target.scrollIntoView({
                             behavior: 'smooth',

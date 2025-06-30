@@ -1,6 +1,27 @@
+<?php
+include '../database.php';
+
+// Proses form pesan
+$alertMsg = '';
+$alertType = 'success';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+    $pesan = $_POST['pesan'];
+    if ($conn->query("INSERT INTO pesan (nama, email, pesan) VALUES ('$nama', '$email', '$pesan')")) {
+        $alertMsg = "Terima kasih, <b>$nama</b>! Pesanmu sudah masuk ke admin.";
+        $alertType = "success";
+    } else {
+        $alertMsg = "Pesan gagal dikirim!";
+        $alertType = "danger";
+    }
+}
+
+// Ambil data tim dari database
+$team = $conn->query("SELECT * FROM team");
+?>
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +64,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg" style="background-color:#d4841c;">
@@ -56,7 +76,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.php">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="daerah.html">Daerah</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="tentang.html">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tentang.php">Tentang</a></li>
                 </ul>
             </div>
         </div>
@@ -96,34 +116,18 @@
         <!-- Tim Kami -->
         <h3 class="mb-3 text-center">Tim Kami</h3>
         <div class="row g-4 mb-4 justify-content-center">
+            <?php while ($row = $team->fetch_assoc()): ?>
             <div class="col-md-3 col-6">
                 <div class="card-custom text-center p-3">
-                    <img src="https://png.pngtree.com/png-clipart/20230913/original/pngtree-advocacy-clipart-cartoon-character-talking-with-a-megaphone-among-other-people-png-image_11074291.png" class="team-img" alt="Andi">
-                    <h6 class="mb-0">Dhonan</h6>
-                    <small class="text-muted">CEO</small>
+                    <img src="../image/<?php echo htmlspecialchars($row['foto']); ?>" class="team-img" alt="<?php echo htmlspecialchars($row['nama']); ?>">
+                    <h6 class="mb-0"><?php echo htmlspecialchars($row['nama']); ?></h6>
+                    <small class="text-muted"><?php echo htmlspecialchars($row['jabatan']); ?></small>
                 </div>
             </div>
-            <div class="col-md-3 col-6">
-                <div class="card-custom text-center p-3">
-                    <img src="https://png.pngtree.com/png-vector/20230729/ourmid/pngtree-advocacy-clipart-many-people-are-gathered-together-and-are-cheering-cartoon-vector-png-image_6796278.png" class="team-img" alt="Budi">
-                    <h6 class="mb-0">Rinakit & Linda</h6>
-                    <small class="text-muted">CTO</small>
-                </div>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="card-custom text-center p-3">
-                    <img src="https://i.pinimg.com/originals/50/5e/d6/505ed641c1363897cc0c3f66de21ba70.jpg" class="team-img" alt="Citra">
-                    <h6 class="mb-0">Ucel & Maura</h6>
-                    <small class="text-muted">Marketing</small>
-                </div>
-            </div>
-            <div class="col-md-3 col-6">
-                <div class="card-custom text-center p-3">
-                    <img src="https://dam.mediacorp.sg/image/upload/s--uJ30p6qW--/c_crop,h_576,w_1024,x_0,y_58/c_fill,g_auto,h_468,w_830/fl_relative,g_south_east,l_mediacorp:cna:watermark:2021-08:mediacorp,w_0.1/f_auto,q_auto/v1/mediacorp/cna/image/2021/12/05/20211203_am_br-priorities_0.jpg?itok=jDyDNj-N" class="team-img" alt="Dewi">
-                    <h6 class="mb-0">Irza & Salmaa</h6>
-                    <small class="text-muted">Customer Service</small>
-                </div>
-            </div>
+            <?php endwhile; ?>
+            <?php if ($team->num_rows == 0): ?>
+            <div class="col-12 text-center text-muted">Belum ada data tim.</div>
+            <?php endif; ?>
         </div>
 
         <!-- Komitmen Kami -->
@@ -165,8 +169,13 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="form-section h-100">
+                <div class="form-section h-100" id="form-pesan">
                     <h5 class="mb-3">Kirim Pesan ke Kami</h5>
+                    <?php if ($alertMsg): ?>
+                        <div class="alert alert-<?php echo $alertType; ?> auto-dismiss-alert" role="alert">
+                            <?php echo $alertMsg; ?>
+                        </div>
+                    <?php endif; ?>
                     <form action="proses_pesan.php" method="post">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
@@ -188,5 +197,28 @@
     </div>
     <!-- Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        setTimeout(function() {
+            document.querySelectorAll('.auto-dismiss-alert').forEach(function(el){
+                el.style.display = 'none';
+            });
+        }, 3000); // 3 detik
+    </script>
+    <script>
+    setTimeout(function() {
+        document.querySelectorAll('.auto-dismiss-alert').forEach(function(el){
+            el.style.display = 'none';
+        });
+    }, 3000);
+
+    // Scroll ke form/alert jika ada alert
+    window.onload = function() {
+        var alertBox = document.querySelector('.auto-dismiss-alert');
+        if(alertBox) {
+            document.getElementById('form-pesan').scrollIntoView({behavior: "smooth"});
+        }
+    }
+</script>
 </body>
 </html>
+<?php $conn->close(); ?>

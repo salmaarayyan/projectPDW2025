@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        if (isset($check_stmt)) $check_stmt->close();
-        if (isset($stmt)) $stmt->close();
-        $conn->close();
+        if (isset($check_stmt)) $check_stmt->close(); // Tutup prepared statement untuk pengecekan username
+        if (isset($stmt)) $stmt->close(); // Tutup prepared statement untuk insert
+        $conn->close(); // Tutup koneksi database
     }
 }
 ?>
@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <h2 class="auth-title">Form Register</h2>
 
-        <?php echo $message; ?>
+        <?php echo $message; ?> <!-- Tampilkan pesan jika ada -->
 
         <form method="POST">
             <div class="mb-3">

@@ -1,9 +1,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include '../database.php';
     $nama = htmlspecialchars($_POST["nama"]);
     $email = htmlspecialchars($_POST["email"]);
     $pesan = htmlspecialchars($_POST["pesan"]);
-    // Di sini kamu bisa menambahkan proses simpan ke database atau kirim email
+    // Simpan ke database
+    $conn->query("INSERT INTO pesan (nama, email, pesan) VALUES ('$nama', '$email', '$pesan')");
+    $conn->close();
 
     echo "<!DOCTYPE html>
     <html lang='id'>
@@ -19,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Pesan kamu sudah kami terima.<br>
                 Kami akan segera menghubungi ke email <strong>$email</strong>.</p>
                 <hr>
-                <a href='tentang.html' class='btn btn-primary'>Kembali ke Tentang Kami</a>
+                <a href='tentang.php' class='btn btn-primary'>Kembali ke Tentang Kami</a>
             </div>
         </div>
     </body>
     </html>";
 } else {
-    header("Location: tentang.html");
+    header("Location: tentang.php");
     exit;
 }
 ?>

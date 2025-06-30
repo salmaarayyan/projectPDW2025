@@ -11,39 +11,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn = new mysqli('localhost', 'root', '', 'kuliner_nusantara');
 
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error); // Cek koneksi
     }
 
     // Query untuk mencari user hanya berdasarkan username
     $sql = "SELECT * FROM users WHERE username = ?";
-    $stmt = $conn->prepare($sql);
+    $stmt = $conn->prepare($sql); // Gunakan prepared statement untuk keamanan
     $stmt->bind_param("s", $username); // Hanya satu parameter 's' untuk username
     $stmt->execute();
-    $result = $stmt->get_result();
+    $result = $stmt->get_result(); // Eksekusi query dan ambil hasilnya
 
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
+    if ($result->num_rows > 0) { // Jika ada user dengan username tersebut
+        $user = $result->fetch_assoc(); // Ambil data user
 
-        if (password_verify($password, $user['password'])) {
+        if (password_verify($password, $user['password'])) { // Verifikasi password
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
 
-            if ($user['role'] == 'admin') {
+            if ($user['role'] == 'admin') { // Jika user adalah admin
                 header('Location: admin_dashboard.php');
             } else {
-                header('Location: index.php');
+                header('Location: index.php'); // Jika user adalah member biasa
             }
             exit();
         } else {
-            $message = '<p class="message-error">Password salah!</p>';
+            $message = '<p class="message-error">Password salah!</p>'; // Pesan jika password salah
         }
     } else {
-        $message = '<p class="message-error">Username tidak ditemukan!</p>';
+        $message = '<p class="message-error">Username tidak ditemukan!</p>'; // Pesan jika username tidak ditemukan
     }
 
-    if (isset($stmt)) $stmt->close();
-    $conn->close();
+    if (isset($stmt)) $stmt->close(); // Tutup prepared statement
+    $conn->close(); // Tutup koneksi database
 }
 ?>
 
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Bootstrap + Google Font -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
+    <style> /* Custom CSS for the login page */
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(to right, #e0eafc, #cfdef3);
@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <h2 class="auth-title">Form Login</h2>
 
-        <?php echo $message; ?>
+        <?php echo $message; ?> <!-- Display error message if exists -->
 
         <form method="POST">
             <div class="mb-3">
